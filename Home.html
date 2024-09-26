@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoWhy</title>
+
+    <!--CSS Externo-->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Script para navegação entre páginas (Essa parte eu peguei um exemplo no youtube de como fazer então
+      não vou me aprofundar tanto para não falar besteira)-->
+    <script>
+        function showPage(pageId) {
+            var pages = document.querySelectorAll("section");
+            pages.forEach(function(page) {
+                page.classList.add("hidden");
+                page.classList.remove("visible");
+            });
+            var currentPage = document.getElementById(pageId);
+            currentPage.classList.remove("hidden");
+            currentPage.classList.add("visible");
+        }
+
+        // Mostrar a primeira página como padrão 
+        window.onload = function() {
+            showPage('home');
+        };
+    </script>
+</head>
+<body>
+
+    <header>
+        <h1>GeoWhy</h1> <!--O <nav> serve para criar o comando para navegação e o <ul> e <li> serve para listar
+        e linkar os comandos :D-->
+        <nav>
+            <ul>
+                <li><a href="Home.html" onclick="showPage('Home')">Home</a></li>
+
+                <li><a href="sobre.html"onclick="showPage('Sobre')" >Sobre</a></li>
+
+                <li><a href="Projetos.html" onclick="showPage('projetos')">Projetos</a></li>
+
+                <li><a href="Contado.html" onclick="showPage('contato')">Contato</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Página Inicial -->
+        <section id="home" class="hidden">
+            <h2>Página Inicial</h2>
+            <img src="img/home.jpg" alt="Imagem da Página Inicial">
+            <p>Bem-vindo ao GeoWhy!</p>
+        </section>              
+                
+    </main>
+
+    <footer>
+        <p>&copy; 2024 GeoWhy. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
